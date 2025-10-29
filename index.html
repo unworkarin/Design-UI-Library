@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Design / UI Library — Demo</title>
+  <link rel="stylesheet" href="../src/ui_lib/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Design / UI Library — Demo</h1>
+    <p>Vanilla Web Components + CSS variables. Try the components below.</p>
+
+    <div class="row">
+      <div class="card">
+        <ui-card>
+          <span slot="title">Primary Card</span>
+          <p>This is a simple card component using CSS variables for theming.</p>
+          <ui-button id="btn1">Primary Action</ui-button>
+        </ui-card>
+      </div>
+
+      <div class="card">
+        <ui-card>
+          <span slot="title">Outlined Button</span>
+          <p>Buttons support an <code>outline</code> attribute.</p>
+          <ui-button outline id="btn2">Secondary</ui-button>
+        </ui-card>
+      </div>
+    </div>
+
+    <h2>Theme Switcher</h2>
+    <p>
+      <button id="light">Light</button>
+      <button id="dark">Dark</button>
+    </p>
+  </div>
+
+  <script type="module">
+    import '../src/ui_lib/components.js';
+    import { applyTheme } from '../src/ui_lib/components.js';
+
+    document.getElementById('light').addEventListener('click', () => {
+      applyTheme({
+        '--ui-bg': '#ffffff',
+        '--ui-primary': '#0d6efd',
+        '--ui-primary-contrast': '#ffffff',
+        '--ui-shadow': '0 6px 18px rgba(0,0,0,0.08)'
+      });
+    });
+    document.getElementById('dark').addEventListener('click', () => {
+      applyTheme({
+        '--ui-bg': '#0f1720',
+        '--ui-primary': '#06b6d4',
+        '--ui-primary-contrast': '#071124',
+        '--ui-shadow': '0 6px 18px rgba(0,0,0,0.2)',
+        '--ui-font-family': 'Inter, system-ui, -apple-system, "Segoe UI", Roboto'
+      });
+    });
+  </script>
+</body>
+</html>

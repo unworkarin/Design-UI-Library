@@ -1,0 +1,13 @@
+:root {
+  --ui-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --ui-primary: #0d6efd;
+  --ui-primary-contrast: #ffffff;
+  --ui-bg: #ffffff;
+  --ui-radius: 8px;
+  --ui-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+body { font-family: var(--ui-font-family); padding: 2rem; background: #f6f8fa; color: #111; }
+.container { max-width: 960px; margin: 0 auto; }
+.row { display:flex; gap:1rem; flex-wrap:wrap; }
+.card { flex: 1 1 300px; }
